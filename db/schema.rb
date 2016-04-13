@@ -13,10 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20150519181601) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "todos", force: :cascade do |t|
+  create_table "todos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
     t.boolean  "is_completed",    default: false
     t.datetime "created_at",                      null: false
